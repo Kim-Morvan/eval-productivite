@@ -6,7 +6,7 @@ import sanitizer from "sanitizer";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
-const port = 8070;
+const port = 8080;
 const host = "127.0.0.1";
 
 const app = express();
@@ -27,11 +27,6 @@ app.get("/", (req, res) => {
 app.post("/comment", (req, res) => {
   const comment = sanitizer.sanitize(req.body.message);
   comment ? res.status(200).send(comment) : res.status(401).send("<h1>Script non autorisé</>");
-
-  // if (comment) {
-  //   return res.status(200).send(comment);
-  // }
-  // res.status(401).send("<h1>Script non autorisé</>");
 });
 
 app.listen(port, host, () => {
