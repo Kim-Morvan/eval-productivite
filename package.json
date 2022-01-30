@@ -5,15 +5,20 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "jsdoc": "npx jsdoc -r public/js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11",
+    "babel-jest": "^27.4.6",
     "cors": "^2.8.5",
     "express": "^4.17.2",
-    "express-session": "^1.17.2"
+    "express-session": "^1.17.2",
+    "sanitizer": "^0.1.3"
   },
   "devDependencies": {
     "eslint": "^8.7.0",
